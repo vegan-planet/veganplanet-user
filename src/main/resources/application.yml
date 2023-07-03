@@ -1,0 +1,16 @@
+server:
+  port: 10001
+spring:
+  application:
+    name: veganplanet-user
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    nacos:
+      server-addr: nacos.vaganplanet.com:8848
+      config:
+        group: JAVA
+        namespace: ""
+      discovery:
+        group: JAVA
+        namespace: ""

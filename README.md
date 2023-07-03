@@ -1,2 +1,2 @@
-# veganplanet-server
-veganplanet-server
+# veganplanet-user
+veganplanet-user
