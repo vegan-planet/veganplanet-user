@@ -3,7 +3,7 @@ package com.veganplanet.user.service.rpc;
 import com.veganplanet.user.api.UserRpcService;
 import com.veganplanet.user.api.dto.UserDTO;
 import com.veganplanet.user.api.vo.UserVO;
-import com.veganplanet.user.domain.entity.User;
+import com.veganplanet.user.domain.entity.Users;
 import com.veganplanet.user.service.UserService;
 import io.seata.spring.annotation.GlobalTransactional;
 import jakarta.annotation.Resource;
@@ -30,14 +30,14 @@ public class UserRpcServiceImpl implements UserRpcService {
     @GlobalTransactional(rollbackFor = Exception.class)
     @Transactional(rollbackFor = Exception.class)
     public UserDTO getUserInfo(UserVO userVO) {
-        User user = new User();
-        user.setName("姓名"+userVO.getUserNo());
+        Users user = new Users();
+        user.setUserName("姓名"+userVO.getUserNo());
         user = this.userService.userInsert(user);
         if (user != null) {
             throw new RuntimeException("测试异常");
         }
         UserDTO userDTO = new UserDTO();
-        userDTO.setName(user.getName());
+        userDTO.setName(user.getUserName());
         return userDTO;
     }
 }

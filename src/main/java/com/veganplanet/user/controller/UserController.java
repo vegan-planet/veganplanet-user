@@ -19,6 +19,6 @@ public class UserController {
     @GetMapping("/getUserInfo")
     @SentinelResource(value = "getUserInfo")
     public Integer getUserInfo() {
-        return userService.getUserInfo(8888);
+        return 1;
     }
 }
